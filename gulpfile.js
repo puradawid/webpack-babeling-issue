@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
   gutil = require('gutil'),
+    happypack = require('happypack'),
 webpack = require('webpack');
 
 var webpackConfig = {
@@ -11,15 +12,21 @@ var webpackConfig = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']}
+        loader: 'happypack/loader',
       }
     ]
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
       debug: true
+    }),
+    new happypack({
+      loaders: [
+        {
+          path: 'babel-loader',
+          query: { presets: [require.resolve('babel-preset-es2015')] }
+        }
+      ]
     })]
   };
 

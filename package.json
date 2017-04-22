@@ -14,6 +14,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "gutil": "^1.6.4",
+    "happypack": "^3.0.3",
     "webpack": "^2.4.1"
   }
 }
