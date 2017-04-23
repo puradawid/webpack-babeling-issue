@@ -21,6 +21,8 @@ var webpackConfig = {
       debug: true
     }),
     new happypack({
+      cache: false,
+      threads: 4,
       loaders: [
         {
           path: 'babel-loader',
